@@ -10,3 +10,17 @@ function fetchImg(word) {
 }
 
 export default { fetchImg };
+
+// export default class FetchImg {
+//   constructor() {
+//     this.page = 1;
+//     this.word = '';
+//   }
+//   fetchImg(word) {
+//     return fetch(
+//       `${URL}?key=${API_KEY}&q=${word}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=1`
+//     ).then(response => {
+//       return response.json();
+//     });
+//   }
+// }

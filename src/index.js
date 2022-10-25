@@ -10,10 +10,10 @@ refs.form.addEventListener('submit', searchForm);
 refs.button.addEventListener('click', onFetchClick);
 
 let word = '';
-
 function searchForm(e) {
   e.preventDefault();
   word = e.currentTarget.elements.searchQuery.value;
+
   FETCH.fetchImg(word).then(onFetchResolve).catch(onFetchError);
 }
 
@@ -22,7 +22,6 @@ function onFetchClick() {
 }
 
 function onFetchResolve(photoCards) {
-  console.log('=>>>>>', photoCards);
   const card = photoCards.hits.map(markup).join('');
   refs.gallery.innerHTML = card;
 }
@@ -40,7 +39,7 @@ function markup(status) {
       <b>Likes:</b> ${likes}
     </p>
     <p class="info-item">
-      <b>Views:</b> ${views}
+      <b>Views:</b> ${views} 
     </p>
     <p class="info-item">
       <b>Comments:</b> ${comments}

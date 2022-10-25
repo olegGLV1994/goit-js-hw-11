@@ -1,6 +1,6 @@
 .load-more {
   display: block;
-  margin: 25px auto 0 auto;
+  margin: auto;
   padding: 10px 30px;
   border: none;
   border-radius: 5px;
@@ -18,9 +18,21 @@ img {
 }
 
 .gallery {
-  margin-bottom: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 30px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+}
+
+.photo-card {
+  width: calc((100% / 4) - 15px);
+  border: 1px solid black;
+}
+.img-card {
+  height: 30vh;
+}
+.info {
+  display: flex;
+  gap: 70px;
+  padding: 10px;
 }
