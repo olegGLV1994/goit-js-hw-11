@@ -23,6 +23,7 @@ function searchForm(e) {
     );
     return;
   }
+
   FETCH.fetchImg(word).then(onFetchResolve).catch(onFetchError);
   refs.button.classList.remove('is-hidden');
 }
@@ -46,6 +47,7 @@ function onFetchResolve(photoCards) {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
+
     return;
   } else {
     Notiflix.Notify.success(`Hooray! We found ${photoCards.totalHits} images.`);
@@ -57,6 +59,7 @@ function onFetchResolve(photoCards) {
 }
 
 function onFetchError(error) {
+  refs.gallery.innerHTML = '';
   refs.button.classList.add('is-hidden');
   Notiflix.Notify.failure('Something went wrong');
 }
