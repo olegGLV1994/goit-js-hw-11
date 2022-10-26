@@ -39,6 +39,7 @@ function onFetchClick() {
       Notiflix.Notify.info(
         "We're sorry, but you've reached the end of search results."
       );
+      refs.button.classList.add('is-hidden');
     });
 }
 
