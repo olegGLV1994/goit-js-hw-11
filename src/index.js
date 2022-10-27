@@ -77,7 +77,7 @@ function markup(status) {
   } = status;
 
   return `
-  <div class="photo-card"><a href='${largeImageURL}'>
+  <div class="photo-card"><a class='photo-link' href='${largeImageURL}'>
   <img src="${webformatURL}" alt="${tags}" loading="lazy" class='img-card' /></a>
   <div class="info">
     <p class="info-item">

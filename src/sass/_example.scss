@@ -39,13 +39,26 @@ img {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  // gap: 10px;
+  gap: 10px;
   // margin: 10px;
+  padding: 10px;
 }
 
 .photo-card {
-  // width: calc((100% - 30px) / 4);
-  border: 1px solid black;
+  width: calc((100% - 30px) / 4);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+.photo-link {
+  transition: cubic-bezier(0.4, 0, 0.2, 1) box-shadow 250ms;
+  outline: none;
+  display: block;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
 }
 .img-card {
   height: 30vh;
