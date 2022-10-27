@@ -1,4 +1,4 @@
-import fetch from './fetch-img';
+import fetch from './fetch-Data';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';

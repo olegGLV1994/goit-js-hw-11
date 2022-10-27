@@ -1,28 +1,62 @@
-.example {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #2f2f37;
-  max-width: 960px;
-  padding: 16px;
+body {
+  background-color: #f5f4fa;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+  padding: 20px;
 }
 
-.example code {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #ff6b0a;
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 2px;
+.search-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: yellow;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  color: black;
+  cursor: pointer;
+}
+.load-more {
+  display: block;
+  margin: auto;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: grey;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  color: white;
+  cursor: pointer;
 }
 
-.example .background {
-  height: 240px;
-  // ❗️❗️❗️ The path to images from a SASS file
-  // is always the same as from the css folder.
-  background-image: url('../images/logo.png');
-  background-size: cover;
-  background-position: center;
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  // gap: 10px;
+  // margin: 10px;
+}
+
+.photo-card {
+  // width: calc((100% - 30px) / 4);
+  border: 1px solid black;
+}
+.img-card {
+  height: 30vh;
+}
+.info {
+  display: flex;
+  // gap: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.is-hidden {
+  visibility: hidden;
 }
