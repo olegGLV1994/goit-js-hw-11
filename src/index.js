@@ -1,4 +1,4 @@
-import FETCH from './fetch-img';
+import fetch from './fetch-img';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -9,12 +9,12 @@ const refs = {
   gallery: document.querySelector('.gallery'),
 };
 
-refs.form.addEventListener('submit', searchForm);
-refs.button.addEventListener('click', onFetchClick);
+refs.form.addEventListener('submit', submitForm);
+refs.button.addEventListener('click', loadMoreButton);
 refs.button.classList.add('is-hidden');
 
 let word = '';
-function searchForm(e) {
+function submitForm(e) {
   e.preventDefault();
   word = e.target.elements.searchQuery.value.trim();
   if (word === '') {
@@ -24,12 +24,13 @@ function searchForm(e) {
     return;
   }
 
-  FETCH.fetchImg(word).then(onFetchResolve).catch(onFetchError);
+  fetch.fetchData(word).then(fetchResolve).catch(fetchError);
   refs.button.classList.remove('is-hidden');
 }
 
-function onFetchClick() {
-  FETCH.fetchImg(word)
+function loadMoreButton() {
+  fetch
+    .fetchData(word)
     .then(data => {
       const card = data.hits.map(markup).join('');
       refs.gallery.innerHTML += card;
@@ -43,7 +44,7 @@ function onFetchClick() {
     });
 }
 
-function onFetchResolve(photoCards) {
+function fetchResolve(photoCards) {
   if (photoCards.totalHits === 0) {
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
@@ -59,7 +60,7 @@ function onFetchResolve(photoCards) {
   simpleLightbox(photoCards);
 }
 
-function onFetchError(error) {
+function fetchError(error) {
   refs.gallery.innerHTML = '';
   refs.button.classList.add('is-hidden');
   Notiflix.Notify.failure('Something went wrong');

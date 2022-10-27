@@ -20,12 +20,12 @@ img {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   margin: 20px;
 }
 
 .photo-card {
-  width: calc((100% / 4) - 15px);
+  width: calc((100% - 30px) / 4);
   border: 1px solid black;
 }
 .img-card {
@@ -33,7 +33,7 @@ img {
 }
 .info {
   display: flex;
-  gap: 20px;
+  // gap: 20px;
   padding: 10px;
   text-align: center;
 }
